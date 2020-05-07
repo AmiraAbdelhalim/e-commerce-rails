@@ -42,8 +42,8 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration[6.0]
     # add_index :admin_users, :unlock_token,         unique: true
 
     AdminUser.create! do |user|
-      user.email     = 'amira@testing.com'
-      user.password    = 'amira123456'
+      user.email     = 'admin@admin.com'
+      user.password    = '123456789'
     end
   end
 end

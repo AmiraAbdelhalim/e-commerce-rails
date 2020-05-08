@@ -27,7 +27,7 @@ ActiveAdmin.register_page "Dashboard" do
           para "Users Emails:"
           ul do
             User.all.map do |user|
-              li user.seller ? user.email : "#{user.email} is a BUYER"
+              li user.seller ? "#{user.email} is SELLER" : "#{user.email} is a BUYER"
             end
           end
         end

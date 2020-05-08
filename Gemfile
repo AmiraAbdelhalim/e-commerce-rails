@@ -59,3 +59,6 @@ gem 'devise'
 
 #active admin
 gem 'activeadmin'
+
+#cancancan
+gem 'cancancan'

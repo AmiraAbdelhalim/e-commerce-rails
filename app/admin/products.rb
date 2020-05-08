@@ -6,15 +6,22 @@ ActiveAdmin.register Product do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :title, :description, :price, :in_stock, :category_id, :brand_id,:user_id,:image
-  permit_params :title, :description, :price, :in_stock, :category_id, :brand_id,:user_id, images: []
+    permit_params :title, :description, :price, :in_stock, :category_id, :brand_id,:user_id, images: []
   
   form do |f|
     f.semantic_errors # shows errors on :base
-    f.inputs          # builds an input field for every attribute
-    f.inputs do 
+    # f.inputs          # builds an input field for every attribute
+    f.inputs do
+      f.input :category_id, as: :select, collection: Category.all
+      f.input :brand_id, as: :select, collection: Brand.all
+      # f.input :admin_user_id, as: :select, collection: AdminUser.where(is_seller: true)
+      # f.input :user_id, as: :select, collection: User.all
+      f.input :title
+      f.input :description
+      f.input :price
+      f.input :in_stock
       f.input :images, as: :file,input_html: {multiple: true}
-      # f.input :image, as: :file
+      # f.input :images, as: :file,input_html: {multiple: true}
     end
     f.actions         # adds the 'Submit' and 'Cancel' buttons
   end

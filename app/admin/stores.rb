@@ -6,7 +6,7 @@ ActiveAdmin.register Store do
   # Uncomment all parameters which should be permitted for assignment
   #
     # permit_params :name, :summary, :user_id
-  permit_params :name, :summary, :user_id
+  permit_params :name, :summary, :admin_user_id
   #
   # or
   #
@@ -18,7 +18,7 @@ ActiveAdmin.register Store do
   # f.input :user, as: :select, collection: User.where(role: 'teacher').map { |u| [u.name, u.id] }, include_blank: true, allow_blank: false, input_html: { class: 'select2' }
   form do |f|
     f.inputs do
-      f.input :user_id, as: :select, collection: User.where(seller: true).map 
+      f.input :admin_user_id, as: :select, collection: AdminUser.where(is_seller: true)
       f.input :name
       f.input :summary
     end

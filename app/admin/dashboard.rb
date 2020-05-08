@@ -21,17 +21,31 @@ ActiveAdmin.register_page "Dashboard" do
       #     end
       #   end
       # end
+      column do
+        panel "Products" do
+          ul do
+            Product.all.map do |p|
+              li p.title
+              # Store.all.map do |s|
+                li p.admin_user_id ? (Store.where(admin_user_id: p.admin_user_id)).inspect : ""
+                # li p.user_id ? s.name : "no name"
+              # end
+            end
+          end
+        end
+      end
 
       column do
         panel "Info" do
           para "Users Emails:"
           ul do
             User.all.map do |user|
-              li user.seller ? user.email : "#{user.email} is a BUYER"
+              li user.seller ? "#{user.email} is SELLER" : "#{user.email} is a BUYER"
             end
           end
         end
       end
+      
     end
   end # content
 end

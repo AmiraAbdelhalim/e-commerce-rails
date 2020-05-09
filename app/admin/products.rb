@@ -18,20 +18,20 @@ ActiveAdmin.register Product do
     end
     f.actions         # adds the 'Submit' and 'Cancel' buttons
   end
-# controller do
-#   def create
+controller do
+  def create
 
-#     render plain: params[:current_admin_user].inspect
-#     # @product=Product.new(permit_params.merge(user_id:current_user.id))
-#   #   @product=Product.new(permitted_params.merge(user_id:current_user.id))
+    # render plain: params[:title:current_active_admin_user].inspect
+    # @product=Product.new(permit_params.merge(user_id:current_user.id))
+  #   @product=Product.new(permitted_params.merge(user_id:current_user.id))
 
-#   #   if @product.save
-#   #           redirect_to @product
-#   #       else
-#   #           render 'new'
-#   #       end
-#   end
-# end
+  #   if @product.save
+  #           redirect_to @product
+  #       else
+  #           render 'new'
+  #       end
+  end
+end
   # show page
   show do
     countImg=0;

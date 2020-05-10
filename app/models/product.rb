@@ -9,4 +9,16 @@ class Product < ApplicationRecord
   validates :in_stock,presence: true
   has_one_attached :image
   # has_many_attached :images
+
+  def user_email#render email insted of seller id(admin)
+    admin_user.email
+    end
+    
+    def category_name#render name instead of id
+    category.name
+    end
+    
+    def brand_name#render name instead of id
+    brand.name
+    end
 end

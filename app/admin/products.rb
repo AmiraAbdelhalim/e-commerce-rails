@@ -8,7 +8,7 @@ ActiveAdmin.register Product do
     f.inputs do
       f.input :category_id, as: :select, collection: Category.all
       f.input :brand_id, as: :select, collection: Brand.all
-      # f.input :admin_user_id, as: :select, collection: AdminUser.all
+      # f.input current_admin_user.admin_user_id
       f.input :admin_user_id, as: :select, collection: AdminUser.where(is_seller: true)
       f.input :title
       f.input :description

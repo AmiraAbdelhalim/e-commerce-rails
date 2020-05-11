@@ -41,9 +41,7 @@ ActiveAdmin.register Product do
       row :description
       row :price
       row :in_stock
-      row :category_id do |category|
-        category.inspect
-      end
+      row :category_id
       row :brand_id
       row 'NumberOfImage' do |ad| 
         countImg=ad.images.length

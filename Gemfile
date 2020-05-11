@@ -65,3 +65,8 @@ gem 'activeadmin'
 
 #cancancan
 gem 'cancancan'
+
+# bootstrap && jquery
+# gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.4.1'
+gem 'jquery-rails'

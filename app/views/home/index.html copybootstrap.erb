@@ -1,0 +1,57 @@
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <h1 class="my-4">categories</h1>
+        <div class="list-group">
+           <% @categories.each do |category| %>
+                 <a href="#" class="list-group-item"><%= category.name %></a>
+              <% end %>
+        </div>
+      </div>
+      <!-- /.col-lg-3 -->
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <h1 class="my-4">Brands</h1>
+        <div class="list-group">
+           <% @brands.each do |brand| %>
+                 <a href="#" class="list-group-item"><%= brand.name %></a>
+              <% end %>
+        </div>
+      </div>
+      <!-- /.col-lg-3 -->
+      
+        <div class="row">
+ <% @products.each do |product| %>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><%=  image_tag product.images[0] ,class:"card-img-top" ,width:"400" ,height:"400"%></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">product.title</a>
+                </h4>
+                <h5>$ <%= product.price %></h5>
+                <p class="card-text"><%= product.description %></p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div>
+            </div>
+          </div>
+  <% end %>
+
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->

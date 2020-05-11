@@ -13,6 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&lang=en");
+//  @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
+ 
  .direct-upload {
     display: inline-block;
     position: relative;
@@ -50,3 +56,5 @@
   input[type=file][data-direct-upload-url][disabled] {
     display: none;
   }
+
+  

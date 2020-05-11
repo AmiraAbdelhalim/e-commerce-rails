@@ -1,39 +1,30 @@
-# class ProductsController < InheritedResources::Base
-
-#   private
-
-#     def product_params
-#       params.require(:product).permit(:title, :description, :price, :in_stock, :category_id, :brand_id, :user_id)
-#     end
-
-# end
 
 class ProductsController < InheritedResources::Base
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
-  # GET /instruments
-  # GET /instruments.json
+  # GET /products
+  # GET /products.json
   def index
     @products = Product.all.order("created_at desc")
   end
 
-  # GET /instruments/1
-  # GET /instruments/1.json
+  # GET /products/1
+  # GET /products/1.json
   def show
   end
 
-  # GET /instruments/new
+  # GET /products/new
   def new
     @product = current_user.products.build
   end
 
-  # GET /instruments/1/edit
+  # GET /proudects/1/edit
   def edit
   end
 
-  # POST /instruments
-  # POST /instruments.json
+  # POST /products
+  # POST /products.json
   def create
     @product = current_user.products.build(product_params)
 

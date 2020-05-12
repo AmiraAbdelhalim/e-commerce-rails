@@ -5,6 +5,8 @@
 <section class="section">
   <%= render(@cart.line_items) %>
 
+  <%= link_to "Proceed to checkout", new_order_path %><br>
+
   <div class="columns">
     <div class="column">
       <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>

@@ -2,7 +2,8 @@ class CartsController < ApplicationController
   include CurrentCart
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!,:only =>[:new , :create,:edit, :update,:destroy ] 
+  before_action :authenticate_user!,:only =>[:new , :create,:edit, :update,:destroy ] 
+  
 
   # GET /carts
   # GET /carts.json

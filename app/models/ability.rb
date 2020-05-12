@@ -11,6 +11,8 @@ class Ability
         can :read, :all
         can :manage, Store
         can :manage, Product
+        can :manage, Order
+
       else
         can :manage, :all
       end

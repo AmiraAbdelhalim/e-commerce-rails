@@ -3,17 +3,17 @@
 one:
   title: MyString
   description: MyString
-  price: MyString
-  in_stock: MyString
-  category: one
-  brand: one
-  user: one
+  price: 20
+  in_stock: 10
+  category: 1
+  brand: 1
+
 
 two:
   title: MyString
   description: MyString
-  price: MyString
-  in_stock: MyString
-  category: two
-  brand: two
-  user: two
+  price: 10
+  in_stock: 20
+  category: 2
+  brand: 2
+ 

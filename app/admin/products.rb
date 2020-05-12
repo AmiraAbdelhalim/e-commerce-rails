@@ -21,7 +21,7 @@ ActiveAdmin.register Product do
 # controller do
 #   def create
 
-#     render plain: params[:current_admin_user].inspect
+#     render plain: params[:product].inspect
 #     # @product=Product.new(permit_params.merge(user_id:current_user.id))
 #   #   @product=Product.new(permitted_params.merge(user_id:current_user.id))
 

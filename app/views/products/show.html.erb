@@ -1,47 +1,70 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<p>
-  <strong>In stock:</strong>
-  <%= @product.in_stock %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.category_name %>
-</p>
-
-<p>
-  <strong>Brand:</strong>
-  <%= @product.brand_name %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @product.user_email %>
-</p>
-
-<div class="column is-3 is-offset-1">
-<div class="bg-white pa4 border-radius-3">
-  <h4 class="title is-5 has-text-centered"><%= number_to_currency(@product.price) %></h4>
-  <%= button_to 'Add to cart', line_items_path(product_id: @product), class: 'button is-warning add-to-cart' %>
-</div>
-</div>
 
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+<div class="col-lg-9">
+  <div class="row">
+      <div class="col-lg-6">
+          <div class="product-pic-zoom">
+              <!-- <img class="product-big-img" src="img/product-single/product-1.jpg" alt=""> -->
+              <%=  image_tag @product.images[0] %>
+          </div>
+          <div class="product-thumbs">
+              <div class="product-thumbs-track ps-slider owl-carousel">
+                <div class="container py-2">
+                  <div class="row d-md-block ">
+                    <% if(@product.images.attached?) %>
+                     <%@product.images.each do |pic| %>
+                      
+                      <div class=" col-md-4 col-6 pb-1 float-md-left">
+                        <%=  image_tag pic ,class:"img-fluid"%>
+                      </div>
+                      <% end %>
+                
+                      <% end %>
+                  </div>
+                </div>
+               
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-6">
+          <div class="product-details">
+              <div class="pd-title">
+                  <span><%= @product.category.name %></span>
+                  <h3> <%= @product.title %></h3>
+                  <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
+              </div>
+              <div class="pd-rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-o"></i>
+                  <span>(5)</span>
+              </div>
+              <div class="pd-desc">
+                  <p> <%= @product.description %></p>
+                  <h4>$  <%= @product.price %> </h4>
+              </div>
+              <div class="quantity">
+                  <div class="pro-qty">
+                      <input type="text" value="1">
+                  </div>
+                  
+                  <%= button_to 'Add to cart', line_items_path(product_id: @product), class: 'button is-warning add-to-cart' %>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+

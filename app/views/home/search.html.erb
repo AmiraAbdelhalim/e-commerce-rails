@@ -1,0 +1,37 @@
+          <div class="col-lg-9 order-1 order-lg-2">
+            <div class="product-list">
+              <div class="row">
+                <% if alert %>
+                <div class="col-lg-9 col-sm-6 text-content-center">
+                <p class="alert alert-danger"><%= alert %></p>
+                </div>
+                <% end %>
+                <% @products.each do |product| %>
+                <div class="col-lg-4 col-sm-6">
+                  <div class="product-item">
+                    <div class="pi-pic">
+                      <%=  image_tag product.images[0] %>
+                      <!-- <img src="img/products/product-2.jpg" alt=""> -->
+                      <div class="icon">
+                        <i class="icon_heart_alt"></i>
+                      </div>
+                      <ul>
+                        <li class="w-icon active"><a href="#"><i class="fas fa-cart-plus"></i></a></li>
+                        <li class="quick-view"><%= link_to t('+ Quick View'),product_path(product) %> </li>
+                      </ul>
+                    </div>
+                    <div class="pi-text">
+                      <div class="catagory-name"><%= product.category.name %></div>
+                      <a href="#">
+                        <h5><%= product.title %></h5>
+                      </a>
+                      <div class="product-price">
+                        $<%= product.price %> 
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>

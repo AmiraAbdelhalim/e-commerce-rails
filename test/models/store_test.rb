@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class StoreTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  store = Store.new
+  store.name="aaaaaaa"
+  store.summary="Sssssssssssssss"
+  store.admin_user_id=1
+  assert store.save
 end

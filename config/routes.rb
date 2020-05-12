@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
+  get 'search',to:'home#search'
   # authenticated :user do
   #   # get 'home/index'
   #   root to: 'home#index', as: :authenticated_root

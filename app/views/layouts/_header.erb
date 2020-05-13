@@ -22,14 +22,17 @@
             </div>
             <div class="col-lg-3 text-right col-md-3">
               <ul class="nav-right">
-                <li class="cart-icon">
-                  <a href="#">
-                    <i class="fas fa-cart-plus"></i>
-                    <span>3</span>
-                  </a>
-                  <div class="cart-hover">
-                </li>
-                <li class="cart-price">$.00</li>
+              <% if total_cart_items %>
+              <%= link_to cart_path(@cart), class:"navbar-item button is-info" do %>
+              <span class="icon is-small">
+                <i class="fa fa-shopping-cart"></i>
+              </span>
+              <span>Cart
+                <%= cart_count_over_one %>
+                </span>
+              <% end %>
+            <% end %>
+               
               </ul>
             </div>
           </div>

@@ -7,7 +7,11 @@ class ProductsController < InheritedResources::Base
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all.order("created_at desc")
+    # @products = Product.all.order("created_at desc")
+    @products = Product.search(params[:search]).all
+# @products = Product.all
+    @categories = Category.all
+    @brands = Brand.all
   end
 
   # GET /products/1
@@ -64,10 +68,24 @@ class ProductsController < InheritedResources::Base
     end
   end
 
+  #Filter
+  def filter
+    if (params[:category].blank?) && (params[:brand].blank?) && (params[:seller].blank?) && (params[:price].blank?) 
+      @products = Product.all
+    else
+      @products = Product.filter(params)
+      @categories = Category.all
+      @brands = Brand.all
+      @category_name = Category.find(params[:category]).name if params[:category].present?
+      @brand_name = Brand.find(params[:brand]).name if params[:brand].present?
+      @price_range = params[:price].keys.first  if params[:price].present?
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.find(params[:product_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

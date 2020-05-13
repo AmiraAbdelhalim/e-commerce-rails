@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :products do
+    collection do
+      get :filter
+    end
+    end 
   resources :line_items
   resources :carts
   resources :products
@@ -8,6 +13,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
   get 'search',to:'home#search'
+  # get 'filter',to:'products#filter'
   # authenticated :user do
   #   # get 'home/index'
   #   root to: 'home#index', as: :authenticated_root

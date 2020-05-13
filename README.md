@@ -1,24 +1,62 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# E-Commerce Web Site
 
-Things you may want to cover:
+ A simple e-commerce site using Ruby on Rails nd relted gems.
 
-* Ruby version
+# Prerequisits
+* Latest ruby version nd rails as well.
 
-* System dependencies
+# Unfunctional Requirements
+* model unit test(Brand &&Category Model).
 
-* Configuration
+# Installation
+- Download the zip file or clone the repo.
+- copy database.yml.example to database.yml and change the configurations to yours.
+* Ruby version '2.7.1'
 
-* Database creation
+- run the following commands
+"install required gems"
+```sh
+$ bundle install
+```
+"create database"
+```sh
+$ rails db:create
+```
+"migrate database"
+```sh
+$ rails db:migrate
+```
+-Go to the url in the browser and type
+```sh
+http://localhost:3000
+```
 
-* Database initialization
+# Accounts
+- admin account:
+```sh
+email: admin@admin.com
+password: 123456789
+```
+-seller account:
+```sh
+email: seller@admin.com
+password: 123456789
+```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+# Technologies
+-Ruby on Rails
+-MySQL
+-HTML5
+-CSS3
 
-* Deployment instructions
+#Team Members:
+*TarekHassan
+*Mohamed Attia
+*Amira Abdelhalim
+*Hager Abdo
 
-* ...
+
+

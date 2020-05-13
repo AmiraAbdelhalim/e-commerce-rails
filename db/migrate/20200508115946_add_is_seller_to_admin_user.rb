@@ -4,7 +4,7 @@ class AddIsSellerToAdminUser < ActiveRecord::Migration[6.0]
   end
   
   AdminUser.create! do |seller|
-    seller.email     = 'seller@admin.com'
+    seller.email     = 'seller@gmail.com'
     seller.password    = '123456789'
   end
 end

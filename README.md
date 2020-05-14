@@ -10,6 +10,9 @@
 # Unfunctional Requirements
 * model unit test(Brand &&Category Model).
 
+# heroku
+https://e-commerce-rails-project-iti.herokuapp.com
+
 # Installation
 - Download the zip file or clone the repo.
 - copy database.yml.example to database.yml and change the configurations to yours.

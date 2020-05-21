@@ -2,10 +2,10 @@
 
 # E-Commerce Web Site
 
- A simple e-commerce site using Ruby on Rails nd relted gems.
+ A simple e-commerce site using Ruby on Rails and related gems.
 
 # Prerequisits
-* Latest ruby version nd rails as well.
+* Latest ruby version and rails as well.
 
 # Unfunctional Requirements
 * model unit test(Brand &&Category Model).
